@@ -1,0 +1,44 @@
+{% extends 'WEDOCAL/layout.html' %}
+{% block body %}
+  <form class="" method="post" >
+    {% csrf_token %}
+    <fieldset>
+      <legend class='m-1 p-4 text-danger border-bottom border-danger' style="font-weight:bold; letter-spacing: 0.6em; text-transform:uppercase;">S'inscrire</legend>
+    </fieldset>
+    <div class="text-danger m-1" style="display:flex-block;font-weight:bold; letter-spacing: 0.1em;">
+      <div class='m-2'style='width:20%;display:inline-block'>
+        <label for="">Nom</label>
+        {{form.name}}
+      </div>
+      <div class='m-2' style='width:20%;display:inline-block'>
+        <label for="">CIN</label>
+        {{form.cin}}
+      </div>
+      <div class='m-2' style='width:15%;display:inline-block'>
+        <label for="">Date de Naissance</label>
+        {{form.birthdate}}
+      </div>
+    </div>
+    <div class='m-2 text-danger' class="" style="display:flex-block ;font-weight:bold; letter-spacing: 0.1em;">
+    <div class='m-2' style='width:10%;display:inline-block'>
+      <label for="">VKORC1 1639</label>
+      {{form.v6}}
+    </div>
+    <div class='m-2' style='width:10%;display:inline-block'>
+      <label for="">VKORC1 1173</label>
+      {{form.v7}}
+    </div>
+    <div class='m-2' style='width:10%;display:inline-block'>
+      <label for="">CYP2C9</label>
+      {{form.haplo}}
+    </div>
+    <div class='m-3 text-danger' class="" style="display:flex-block ;font-weight:bold; letter-spacing: 0.1em;">
+      <button type="submit" class="btn btn-outline-danger">S'inscrire</button>
+    </div>
+    <div class="border-top pt-3 border-danger ">
+      <small class='text-info'>
+        J'ai deja un compte | <a href="{% url 'check' %}" class="m-2">Consulter</a>
+      </small>
+    </div>
+  </form>
+{% endblock body %}
